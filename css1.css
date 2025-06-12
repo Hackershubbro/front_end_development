@@ -1,0 +1,47 @@
+body{
+    background-color: brown;
+}
+
+*{
+    margin: 10px;
+    padding: 10px;
+}
+
+div ~ label{
+    content: "ENTER NAME:";
+}
+
+p:hover{
+    background-color: cornsilk;
+}
+
+div + label{
+    background-color: chartreuse;
+}
+
+div + label + input{
+    background-color: darkgreen;
+}
+
+div ~ input{
+    background-color: bisque;
+}
+
+div > p{
+    background-color: blue;
+}
+
+input:focus{
+    width: 100px;
+}
+input:active{
+    height: 300px;
+}
+
+div > p:first-child::selection{
+    background-color: deepskyblue;
+}
+
+div > p:first-child::first-letter{
+    background-color: deepskyblue;
+}
