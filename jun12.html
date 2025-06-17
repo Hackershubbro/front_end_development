@@ -5,7 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
+        body {
+            height: 600vh;
+            margin: 0;
+        }
         .para1{
+            position: relative;
+            top: 0;
             text-align:center;
             text-shadow: 2px 2px lawngreen;
         }
@@ -19,18 +25,21 @@
             font-size: xx-large;
             text-align: center;
             text-indent: 10px;
-            text-shadow: 3px 3px aqua;
+            text-shadow: 3px 3px #b8885d;
         }
         .box1, .box2{
             width: 100px;
             height: 100px;
             margin: 20px;
+        
         }
         .box1{
-            background-color: red;
+            position: sticky;
+            top:0;
+            background-color: rgba(215, 221, 28, 0.284);
         }
         .box2{
-            background-color: chocolate;
+            background-color: rgb(255, 221, 70);
         }
         div {
             display: flex;
@@ -41,10 +50,13 @@
     </style>
 </head>
 <body>
+        <p class="para1">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ut, aut! Unde sunt velit veritatis fugit suscipit hic nam voluptatum quae laudantium amet repellendus delectus quod illum, vel aperiam corporis dignissimos!</p>
+    <p class="para2">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Placeat, est porro aliquid illum modi aspernatur inventore iure! Assumenda, cupiditate rerum. Rem aut minus iusto repudiandae eveniet iste, impedit ab neque.</p>
+    <p class="para3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus accusantium aut laboriosam fugit amet, voluptas officiis commodi deleniti culpa quod, reiciendis pariatur itaque? Aliquid provident odio pariatur beatae eaque. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eligendi amet similique laboriosam doloremque asperiores doloribus quaerat id consequatur, ipsum, a cupiditate magnam fugiat maxime beatae, itaque nam obcaecati debitis architecto.</p>
     <p class="para1">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ut, aut! Unde sunt velit veritatis fugit suscipit hic nam voluptatum quae laudantium amet repellendus delectus quod illum, vel aperiam corporis dignissimos!</p>
     <p class="para2">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Placeat, est porro aliquid illum modi aspernatur inventore iure! Assumenda, cupiditate rerum. Rem aut minus iusto repudiandae eveniet iste, impedit ab neque.</p>
-    <p class="para3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus accusantium aut laboriosam fugit amet, voluptas officiis commodi deleniti culpa quod, reiciendis pariatur itaque? Aliquid provident odio pariatur beatae eaque. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eligendi amet similique laboriosam doloremque asperiores doloribus quaerat id consequatur, ipsum, a cupiditate magnam fugiat maxime beatae, itaque nam obcaecati debitis architecto.</qui></p>
+    <p class="para3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus accusantium aut laboriosam fugit amet, voluptas officiis commodi deleniti culpa quod, reiciendis pariatur itaque? Aliquid provident odio pariatur beatae eaque. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eligendi amet similique laboriosam doloremque asperiores doloribus quaerat id consequatur, ipsum, a cupiditate magnam fugiat maxime beatae, itaque nam obcaecati debitis architecto.</p>
     <div class="box1">1</div>
-    <div class="box2">2</div>
+        <div class="box2">2</div>
 </body>
 </html>

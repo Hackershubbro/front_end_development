@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Netflix Navbar Clone</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: url('https://cdn.neowin.com/news/images/uploaded/2024/06/1717732935_netflix_english_tv_ui.jpg') no-repeat center center fixed;
+            background-size: cover;
+            height: 100vh;
+            font-family: 'Netflix Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            color: white;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 4%;
+            background: linear-gradient(to bottom, rgba(0, 0, 0, 0.7) 10%, rgba(0, 0, 0, 0) 100%);
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 100;
+            transition: background-color 0.4s;
+        }
+
+        .navbar.scrolled {
+            background-color: rgba(0, 0, 0, 0.9);
+        }
+
+        .logo {
+            margin-left: 10px;
+            height: 45px;
+        }
+
+        .nav-right {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-right: 20px;
+        }
+
+        .lang-container {
+            position: relative;
+            display: flex;
+            align-items: center;
+            border: 1px solid rgba(255, 255, 255, 0.7);
+            border-radius: 4px;
+            padding: 5px 10px 5px 12px;
+            background-color: rgba(0, 0, 0, 0.4);
+            cursor: pointer;
+            transition: all 0.2s ease;
+            min-width: 120px; /* Fixed width for the container */
+        }
+
+        .lang-container:hover {
+            border-color: rgba(255, 255, 255, 0.9);
+        }
+
+        .lang-icon {
+            width: 16px;
+            height: 16px;
+            margin-right: 8px;
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white"><path d="M12.87 15.07l-2.54-2.51.03-.03c1.74-1.94 2.98-4.17 3.71-6.53H17V4h-7V2H8v2H1v1.99h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11.76-2.04zM18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2l-4.5-12zm-2.62 7l1.62-4.33L19.12 17h-3.24z"/></svg>');
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+
+        .language-select {
+            background-color: transparent;
+            color: white;
+            border: none;
+            font-size: 14px;
+            font-weight: 500;
+            appearance: none;
+            outline: none;
+            cursor: pointer;
+            padding-right: 20px;
+            width: 110%; /* Make select take full container width */
+            position: absolute;
+            left: 0;
+            top: 0;
+            height: 110%;
+            opacity: 0; /* Make select invisible but clickable */
+        }
+
+        /* Custom dropdown styling */
+        .language-select option {
+            background-color: rgba(255, 255, 255, 0.9);
+            color: rgb(0, 0, 0);
+            padding: 10px 15px;
+            font-size: 14px;
+        }
+
+        /* Custom dropdown arrow and text */
+        .lang-text {
+            pointer-events: none;
+            font-size: 14px;
+            font-weight: 700;
+            white-space: nowrap;
+        }
+
+        .lang-container::after {
+            border: 2px 2px 2px 2px white;
+            content: "▼";
+            position: absolute;
+            right: 8px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: white;
+            font-size: 10px;
+            pointer-events: none;
+        }
+
+        .sign-in-btn {
+            background-color: #e50914;
+            color: white;
+            border: none;
+            padding: 7px 17px;
+            font-size: 14px;
+            font-weight: 700;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.2s ease;
+            margin-right: 20px;
+        }
+
+        .sign-in-btn:hover {
+            background-color: #f40612;
+        }
+
+        @media (max-width: 800px) {
+            .navbar {
+                padding: 15px 4%;
+            }
+
+            .logo {
+                height: 32px;
+            }
+
+            .lang-container {
+                min-width: 40px;
+                padding: 5px 25px 5px 12px;
+            }
+
+            .lang-text {
+                display: none;
+            }
+        }
+
+        @media (max-width: 500px) {
+            .sign-in-btn {
+                padding: 5px 12px;
+                font-size: 12px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar" id="navbar">
+        <img class="logo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7a/Logonetflix.png/960px-Logonetflix.png" alt="Netflix Logo">
+        <div class="nav-right">
+            <div class="lang-container">
+                <div class="lang-icon"></div>
+                <span class="lang-text">English</span>
+                <select class="language-select">
+                    <option value="en">English</option>
+                    <option value="hi">Hindi</option>
+                </select>
+            </div>
+            <button class="sign-in-btn">Sign In</button>
+        </div>
+    </nav>
+
+    <script>
+        // Add scroll effect like Netflix
+        window.addEventListener('scroll', function() {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 10) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // Update displayed language text when selection changes
+        const languageSelect = document.querySelector('.language-select');
+        const langText = document.querySelector('.lang-text');
+        
+        languageSelect.addEventListener('change', function() {
+            langText.textContent = this.options[this.selectedIndex].text;
+        });
+    </script>
+</body>
+
+</html>
